@@ -43,7 +43,7 @@ foreach(new RecursiveIteratorIterator($it) as $file)
 {	
 
 	# Process file
-	if ( (strpos(strtoupper($file), '.JPG') !== false) && (strstr($file, $COLLECTION_NAME)) )
+	if ( (strpos(strtoupper($file), '.JPG') !== false) ) 
 	{
 		# echo $file . "<br>";
 		$delimiter = "/";
@@ -136,10 +136,19 @@ else
 #	$random_index = rand(0, count($list_of_images)-1);
 #	$image_info = $list_of_images[$random_index];
 
-$url = $IMAGE_WEB_DIR."/".$image_info["type"] . "/" . $image_info["msn"] . "/" . $image_info["name"];
+$id = $image_info["name"];
+$old_id = $_POST["old_id"];
+error_log("old_id:".$old_id."\n",3,'test.log');
+if(isset($old_id))
+{       
+	$id = $old_id;
+}
+
+#$url = $IMAGE_WEB_DIR."/".$image_info["type"] . "/" . $image_info["msn"] . "/" . $image_info["name"];
+$url = $IMAGE_WEB_DIR."/".$id;
 
 # Remove extension
-$id = str_replace(array(".jpg",".JPG"),".jpg", $image_info["name"]);
+$id = str_replace(array(".jpg",".JPG"),".jpg", $id);
 
 # Get the xml file, replace .jpg by xml
 $xml_filename = str_replace(array(".jpg",".JPG"), ".xml", $id);			

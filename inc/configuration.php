@@ -7,9 +7,6 @@ $IMAGE_WEB_DIR = "data/images";
 $IMAGE_ROOT_DIR  = "../data/images";
 $ANNOTATIONS_DIR = "../data/annotations";
 
-# Collection name 
-$COLLECTION_NAME = "collection_01";
-
 # Not annotated image 80% to be presented to user
 $ratio_new_old = 80;
 
