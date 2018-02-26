@@ -603,7 +603,7 @@ function isTagInAuthorizedList()
      // Process the list of tags
 	 var areas = $('#image_to_process').selectAreas('areas');
 
-	 if (areas.length == 0)
+	 if (areas.length < 0)
 	 {
 		setStatusAndColor("Create at least one region with a tag before submitting.", RED_COLOR);
 		return false;

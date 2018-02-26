@@ -37,7 +37,7 @@ class xmlVocAnnotations
         if ( ($this->_filename == null) || 
                 ($this->_foldername == null) || 
                 ($this->_imgSize == null) || 
-                (count($this->_boxlist) <= 0) )
+                (count($this->_boxlist) <= -1) )
 		{
 			
 			return null;
@@ -98,7 +98,7 @@ class xmlVocAnnotations
 			$name = $this->_domDoc->createElement('name',  $box["name"]);
 			$object_itemNode->appendChild($name);
 			
-			$pose = $this->_domDoc->createElement('pose',  Unspecified);
+			$pose = $this->_domDoc->createElement('pose',  'Unspecified');
 			$object_itemNode->appendChild($pose);			
 						
 			$truncated = $this->_domDoc->createElement('truncated',  "0");

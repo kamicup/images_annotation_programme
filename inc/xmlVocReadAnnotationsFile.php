@@ -10,6 +10,7 @@ class xmlVocReadAnnotationsFile
 		  
     function __construct($xmlFilePath)
 	{
+	error_log($xmlFilePath."\n",3,'test.log');
         $this->_xmlFilePath = $xmlFilePath;
 		$this->_domDoc = new DOMDocument;
 		$this->error_loading = false;
@@ -66,19 +67,20 @@ class xmlVocReadAnnotationsFile
 		
 		try
 		{			
-			$filename = $this->_domDoc->getElementsByTagName("filename")[0];
+			$filename = $this->_domDoc->getElementsByTagName("filename")->item(0)->nodeValue;
 			# echo $filename->nodeValue, PHP_EOL;
+			error_log($filename."\n",3,'test.log');
 			 
 			# Get annotations
 			$listeObject = $this->_domDoc->getElementsByTagName('object');
 			
 			foreach($listeObject as $object)
 			{
-				$tag = $object->getElementsByTagName("name")[0];
-				$xmin = $object->getElementsByTagName("xmin")[0];
-				$ymin = $object->getElementsByTagName("ymin")[0];
-				$xmax = $object->getElementsByTagName("xmax")[0];
-				$ymax = $object->getElementsByTagName("ymax")[0];
+				$tag = $object->getElementsByTagName("name")->item(0);
+				$xmin = $object->getElementsByTagName("xmin")->item(0);
+				$ymin = $object->getElementsByTagName("ymin")->item(0);
+				$xmax = $object->getElementsByTagName("xmax")->item(0);
+				$ymax = $object->getElementsByTagName("ymax")->item(0);
 				
 				/*echo "name ". $tag->nodeValue . PHP_EOL;
 				echo "xmin ". $xmin->nodeValue . PHP_EOL;
