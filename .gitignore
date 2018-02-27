@@ -1,0 +1,7 @@
+data/annotations/
+*.log
+#.gitignore
+shell/object_detection/protos/__pycache__/
+shell/object_detection/utils/__pycache__/
+*.record
+shell/label_map.pbtxt

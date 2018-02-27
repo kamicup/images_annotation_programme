@@ -44,7 +44,7 @@ flags.DEFINE_string('set', 'train', 'Convert training set, validation set or '
                     'merged set.')
 flags.DEFINE_string('annotations_dir', 'annotations',
                     '(Relative) path to annotations directory.')
-flags.DEFINE_string('output_path', 'trian.record', 'Path to output TFRecord')
+flags.DEFINE_string('output_path', 'train.record', 'Path to output TFRecord')
 flags.DEFINE_string('label_map_path', 'label_map.pbtxt',
                     'Path to label map proto')
 flags.DEFINE_boolean('ignore_difficult_instances', False, 'Whether to ignore '
