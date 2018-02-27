@@ -267,7 +267,7 @@ $(document).ready(function ()
 		// Check region size
 		if (isAreaTooSmall(area))
 		{
-			setStatusAndColor("The region is too small (must be >80px).", RED_COLOR)
+			setStatusAndColor("标记的区域太小 (必须 >80px).", RED_COLOR)
 
 			newWidth = area.width;
 			newHeight = area.height;
@@ -492,7 +492,7 @@ function isTagInAuthorizedList()
 		// Check region size
 		if (isAreaTooSmall(area))
 		{
-			setStatusAndColor("The region is too small (must be >80px).", RED_COLOR)
+			setStatusAndColor("标记的区域太小 (必须 >80px).", RED_COLOR)
 
 			newWidth = area.width;
 			newHeight = area.height;
@@ -513,7 +513,7 @@ function isTagInAuthorizedList()
 		{
 			if (changeStatusMessage)
 			{
-				setStatus("Region has been selected.");
+				setStatus("必须选择标记区域");
 			}
 		}
 	}
@@ -562,7 +562,7 @@ function isTagInAuthorizedList()
 
 	if (isAreaTooSmall(current_area))
 	{
-		setStatusAndColor("Tag was not set, the region is too small.", RED_COLOR)
+		setStatusAndColor("标签没有设置成功，标记区域太小.", RED_COLOR)
 		return false;
 	}
 
@@ -580,13 +580,13 @@ function isTagInAuthorizedList()
 
 	if (!isTagInAuthorizedList())
 	{
-		setStatusAndColor("This tag is not in the predefined list.", RED_COLOR);
+		setStatusAndColor("标签没有在预定义的列表中，请选择列表中的标签", RED_COLOR);
 		return false;
 	}
 
 	// Just change the tag, get area, id, ...
 	$('#image_to_process').selectAreas('setTag', current_area.id, region_tag);
-	setStatus("Tag has been set.");
+	setStatus("标签设置成功");
 
 	// Selection another box
 	new_zone_created = true	;
@@ -631,11 +631,11 @@ function isTagInAuthorizedList()
 		{
 			if (areas.length==1)
 			{
-				setStatusAndColor("You should add a tag to the region.", RED_COLOR);
+				setStatusAndColor("你应该为标记区域添加标签", RED_COLOR);
 			}
 			else
 			{
-				setStatusAndColor("You should add a tag to each region.", RED_COLOR);
+				setStatusAndColor("你应该为每个标记区域添加标签", RED_COLOR);
 			}
 			error_occurs = true;
 			return false;
@@ -679,7 +679,7 @@ function isTagInAuthorizedList()
 	   },
 	   error : function(data, status, error)
 	   {
-			setStatusAndColor("Unable to send data, please retry or check your connection.", RED_COLOR)
+			setStatusAndColor("请求服务器出错，请检查连接", RED_COLOR)
        }
     });
 
@@ -709,7 +709,7 @@ function isTagInAuthorizedList()
 	if (user_id != "")
 	{
 		// The user is known
-		$("#message").text("Welcome back !");
+		$("#message").text("欢迎!");
     }
 	else
 	{
@@ -786,7 +786,7 @@ function isTagInAuthorizedList()
           if(!old_id) return;
 
  
-	   setStatusAndColor("Data has been sent.", GREEN_COLOR);
+	   setStatusAndColor("请求已经发送...", GREEN_COLOR);
 	   loadImage(old_id); // replace the image
 	   getOrCreateUserId(); // Count also points later on
 
@@ -829,7 +829,7 @@ function isTagInAuthorizedList()
 							</div>
 
 							 <div style=" padding:2px 2px;background-color:#fff;text-align: center;">
-								<span class="serif_medium">Images Annotation Programme</span>
+								<span class="serif_medium">图片标记程序</span>
 						     </div>
 
 						     <div style="display: inline-block; width:100%; background-color:#fff;padding-top: 6px; padding-bottom: 3px">
@@ -841,7 +841,7 @@ function isTagInAuthorizedList()
 									</div>
 
 									<div style="float:left" class="serif_small">
-										Tag
+										标签
 									</div>
 
 								</div>
@@ -857,19 +857,19 @@ function isTagInAuthorizedList()
 							</div>
 
 							<div style="padding-top: 4px" class="ae_small_90">
-								<span id="status"  id="image_id">> Select a region from the picture.</span>
+								<span id="status"  id="image_id">> 在图片中选择一个区域</span>
 							</div>
 
 							<div style="padding-top:12px;text-align: right;">
-								<button id="add_region" class="tooltip ae_button_level_1">Set Tag
+								<button id="add_region" class="tooltip ae_button_level_1">设置标签
 								<span style="padding-left:4px;">
 								<img src="./images/ic_add_black_48dp.png" style="vertical-align: bottom;" alt="" width="18" height="18"></span>
-								<span class="tooltiptext light_green">Add highlighted region with associated tag.</span></button>
+								<span class="tooltiptext light_green">给选中的标记区域设置标签</span></button>
 							</div>
 
 							<div style="padding-top:24px;box-sizing: border-box;width=100%;text-align: right;">
-								<button id="validate_button" class="tooltip ae_button_level_1">Validate & Get next Image
-								<span class="tooltiptext light_green">Validate all the tags added to this image and go to the next image.</span>
+								<button id="validate_button" class="tooltip ae_button_level_1">保存&nbsp;&&nbsp;下一张
+								<span class="tooltiptext light_green">保存已经标记信息，并重新加载一张新的图片</span>
 								<span style="padding-left:4px;">
 								<img src="./images/ic_navigate_next_black_48dp.png" style="vertical-align: bottom;" alt="" width="18" height="18"></span></button>
 							</div>
@@ -880,24 +880,24 @@ function isTagInAuthorizedList()
 										<img src="./images/label_collection.png" alt="" width="18" height="18">
 									</div>
 									<div style="float:left" class="serif_small">
-										Tags View
+										标记显示
 									</div>
 								</div>
 							</div>
 														
 							 <div style="width:100%; background-color:#fff;padding-top: 3px; <div style="padding-top:12px;box-sizing: border-box;width=100%;text-align: right;">
-								<button id="all_annotations_button" class="tooltip ae_button_level_3">All
-								<span class="tooltiptext light_violet">Display all Annotations</span>
+								<button id="all_annotations_button" class="tooltip ae_button_level_3">全部
+								<span class="tooltiptext light_violet">显示全部标记</span>
 								<span style="padding-left:4px;">
 								<img src="./images/label_all_annotations.png" style="vertical-align: bottom;" alt="" width="18" height="18"></span></button>
 								
-								<button id="none_annotation_button" class="tooltip ae_button_level_3">None
-								<span class="tooltiptext light_violet">Hide the Annotations</span>
+								<button id="none_annotation_button" class="tooltip ae_button_level_3">不显示
+								<span class="tooltiptext light_violet">隐藏全部标记</span>
 								<span style="padding-left:4px;">
 								<img src="./images/label_none_annotations.png" style="vertical-align: bottom;" alt="" width="18" height="18"></span></button>
 								
 								<button id="one_annotation_button" class="tooltip ae_button_level_3">
-								<span class="tooltiptext light_violet">Click to display next annotation</span>
+								<span class="tooltiptext light_violet">显示下一个标记</span>
 								<span style="padding-left:4px;">
 								<img src="./images/ic_navigate_next_black_48dp.png" style="vertical-align: bottom;" alt="" width="18" height="18"></span></button>
 								
@@ -906,21 +906,21 @@ function isTagInAuthorizedList()
 														
 							<div style="padding-top:96px;box-sizing: border-box;width=100%;text-align: right;">
 
-								<button onclick="loadGivenImage()" class="tooltip ae_button_level_2">Reload
-								<span class="tooltiptext light_blue">Ignore this image and associated tags and go to the next image.</span>
+								<button onclick="loadGivenImage()" class="tooltip ae_button_level_2">加载
+								<span class="tooltiptext light_blue">加载输入框中的图片</span>
 								<span style="padding-left:4px;">
 								<img src="./images/ic_replay_black_48dp.png" style="vertical-align: bottom;" alt="" width="18" height="18"></span></button>
 
 
-								<button onclick="window.location.reload()" class="tooltip ae_button_level_2">Ignore & Get next image
-								<span class="tooltiptext light_blue">Ignore this image and associated tags and go to the next image.</span>
+								<button onclick="window.location.reload()" class="tooltip ae_button_level_2">不保存 &nbsp; & &nbsp; 下一张
+								<span class="tooltiptext light_blue">不保存并加载一张新的图片</span>
 								<span style="padding-left:4px;">
 								<img src="./images/ic_replay_black_48dp.png" style="vertical-align: bottom;" alt="" width="18" height="18"></span></button>
 							</div>
 
 							<div style="padding-top:24px;box-sizing: border-box;width=100%;text-align: right;">
-								<button onclick="window.location.href='thank_you.html'" class="tooltip ae_button_level_2">Leave
-								<span class="tooltiptext light_blue">Leave this page, cancel all tags of this image. Validated tags will be kept.</span>
+								<button onclick="window.location.href='thank_you.html'" class="tooltip ae_button_level_2">离开
+								<span class="tooltiptext light_blue">离开当前页面，页面的标记不会被保存</span>
 								<span style="padding-left:4px;">
 								<img src="./images/ic_exit_to_app_black_48dp.png" style="vertical-align: bottom;" alt="" width="18" height="18"></span></button>
 							</div>

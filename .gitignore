@@ -5,3 +5,4 @@ shell/object_detection/protos/__pycache__/
 shell/object_detection/utils/__pycache__/
 *.record
 shell/label_map.pbtxt
+images_annotation_programme.iml
