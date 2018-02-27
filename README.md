@@ -43,7 +43,7 @@ Each image will generate one XML file in the directory **data/annotations**
 
 ## Output as Pascal VOC xml files
 
-This format is a standard and can be easily read from [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/object_detection)
+This format is a standard and can be easily read from [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection)
 
 ```xml
 <?xml version="1.0"?>
