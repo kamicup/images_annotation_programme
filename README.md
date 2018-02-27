@@ -84,6 +84,7 @@ file `shell/label_map.pbtxt` should be generate
 
 ```
 # From shell/ (by default config)
+# note:tensorflow should be installed success
 python convert_voc_to_rf_record.py
 ```
 file `shell/train.record` should be generate
