@@ -17,15 +17,12 @@ $IMAGE_WEB_DIR = "data/images";
 $IMAGE_ROOT_DIR  = "../data/images";
 $ANNOTATIONS_DIR = "../data/annotations";
 
-# Collection name 
-$COLLECTION_NAME = "collection_01";
-
 # Not annotated image 80% to be presented to user
 $ratio_new_old = 80;
 ?>
 ```
 ### 2. Images
-Images to be annotated are located in **data/images/collection_01/part_1** and **data/images/collection_01/part_2**
+Images to be annotated are located in **data/images**
 
 ### 3. List of classes
 
@@ -51,17 +48,17 @@ This format is a standard and can be easily read from [Tensorflow Object Detecti
 ```xml
 <?xml version="1.0"?>
 <annotation>
-  <folder>collection_01/part_1</folder>
+  <folder>images</folder>
   <filename>pexels-photo-60091.jpg</filename>
   <path/>
   <source>
     <database>Unknown</database>
   </source>
-  <size_part>
+  <size>
      <width>1125</width>
      <height>750</height>
      <depth>3</depth>
-  </size_part>
+  </size>
   <segmented>0</segmented>
   <object>
     <name>Bird</name>
@@ -77,6 +74,20 @@ This format is a standard and can be easily read from [Tensorflow Object Detecti
   </object>
 </annotation>
 ```
+
+## Generate [TFRecord file format](https://www.tensorflow.org/api_guides/python/python_io#tfrecords_format_details)
+```
+# From shell/ (by default config)
+python convert_tag_json_to_pbtxt.py
+```
+file `shell/label_map.pbtxt` should be generate
+
+```
+# From shell/ (by default config)
+python convert_voc_to_rf_record.py
+```
+file `shell/train.record` should be generate
+
 
 ## Contributions
 
