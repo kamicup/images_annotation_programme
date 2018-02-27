@@ -191,7 +191,7 @@ file_put_contents($file, "Annotations ".serialize($annotations)."\n",FILE_APPEND
 file_put_contents($file, "URL image = ".$url."\n",FILE_APPEND | LOCK_EX);
 
 # Prepare message to send
-$data = array ("url" => $url, "id" => $id, "folder" => $image_info["type"] . "/" . $image_info["msn"], 
+$data = array ("url" => $url, "id" => $id, "folder" => $image_info["msn"], 
 				"annotations" => $annotations);
 	
 file_put_contents($file, "Annotations ".serialize($data)."\n",FILE_APPEND | LOCK_EX);

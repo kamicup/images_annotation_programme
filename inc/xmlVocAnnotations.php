@@ -61,7 +61,7 @@ class xmlVocAnnotations
 		$database = $this->_domDoc->createElement('database',$this->_databaseSrc);
 		$sourceNode->appendChild($database);			
         
-		$size_part = $this->_domDoc->createElement('size_part');
+		$size_part = $this->_domDoc->createElement('size');
 		$size_partNode = $topNode->appendChild($size_part);	
 				
         $width  = $this->_domDoc->createElement('width',  strval($this->_imgSize['width']));
