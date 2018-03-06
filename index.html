@@ -148,7 +148,7 @@ $(document).ready(function ()
 
 		// Loop on tag info
 		
-	    $('#image_to_process').selectAreas('reset');
+	    $('#image_to_process').selectAreas('destroy');
 		json_annotations.forEach(function(element) {
 			var areaOptions = {
 				x: (element.x * ratio_original_to_screen_x),
