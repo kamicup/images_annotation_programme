@@ -183,9 +183,9 @@ $(document).ready(function ()
 		getValue: "name",
 
 		 template: {
-			type: "iconRight",
+			type: "description",
 				fields: {
-					iconSrc: "icon"
+					description: "desc"
 					}
 			},
 
@@ -272,14 +272,14 @@ $(document).ready(function ()
 			newWidth = area.width;
 			newHeight = area.height;
 
-			if (newWidth < 80)
+			if (newWidth < 40)
 			{
-				newWidth = 80;
+				newWidth = 40;
 			}
 
-			if (newHeight < 80)
+			if (newHeight < 40)
 			{
-				newHeight = 80;
+				newHeight = 40;
 			}
 
 			$('#image_to_process').selectAreas('resizeArea', current_area.id, newWidth, newHeight);

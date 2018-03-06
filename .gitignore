@@ -1,4 +1,6 @@
 data/annotations/
+data/images/
+resources/tag_examples/
 *.log
 #.gitignore
 shell/object_detection/protos/__pycache__/

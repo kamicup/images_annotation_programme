@@ -1,6 +1,7 @@
 [
-	{"name": "Long Beak Bird", "icon": "resources/tag_examples/long_beak.jpg"},
-	{"name": "Eagle", "icon": "resources/tag_examples/eagle.jpg"},
-	{"name": "Parrot", "icon": "resources/tag_examples/parrot.jpg"},	
-	{"name": "Baby Bird", "icon": "resources/tag_examples/baby_bird.jpg"}
+	{"name": "a nw","desc":"有鸟窝", "icon": "resources/tag_examples/nw.jpg"},
+	{"name": "a fc","desc":"有蜂巢", "icon": "resources/tag_examples/fc.jpg"},
+	{"name": "a jyh","desc":"均压环倾斜", "icon": "resources/tag_examples/jyh.jpg"},
+	{"name": "a jyz","desc":"绝缘子爆裂", "icon": "resources/tag_examples/jyz.jpg"},
+	{"name": "a fzc","desc":"防震锤损坏", "icon": "resources/tag_examples/fzc.jpg"}
 ]
