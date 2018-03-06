@@ -618,10 +618,10 @@ function isTagInAuthorizedList()
 	$.each(areas, function (id, area) {
 	    var tag_info = {tag:"",x:0,y:0,width:0,height:0};
 		tag_info.tag = area.tag;
-		tag_info.x = area.x * ratioX;
-		tag_info.y = area.y * ratioY;
-		tag_info.width = area.width * ratioX;
-		tag_info.height = area.height * ratioY;
+		tag_info.x = Math.round(area.x * ratioX);
+		tag_info.y = Math.round(area.y * ratioY);
+		tag_info.width = Math.round(area.width * ratioX);
+		tag_info.height = Math.round(area.height * ratioY);
 		// To be checked
 		tmp_annotations.push(tag_info);
 		// image_info.annotations[index_tag] = tag_info;
