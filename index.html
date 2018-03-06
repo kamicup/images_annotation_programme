@@ -662,12 +662,12 @@ function isTagInAuthorizedList()
 	   success : function(data, status)
 	   {
 	       // Reload a page but with a message
-		   setStatusAndColor("Data has been sent.", GREEN_COLOR);
+		   //setStatusAndColor("Data has been sent.", GREEN_COLOR);
 		   loadImage(); // replace the image
 		   getOrCreateUserId(); // Count also points later on
 
 		   // Message to user
-		   $("#message").text(data.message);
+		   //$("#message").text(data.message);
 		   image_info = {
                 url: "",
 				folder: "",
@@ -787,12 +787,12 @@ function isTagInAuthorizedList()
           if(!old_id) return;
 
  
-	   setStatusAndColor("请求已经发送...", GREEN_COLOR);
+	   //setStatusAndColor("请求已经发送...", GREEN_COLOR);
 	   loadImage(old_id); // replace the image
 	   getOrCreateUserId(); // Count also points later on
 
 	   // Message to user
-	   $("#message").text(data.message);
+	   //$("#message").text(data.message);
 	   image_info = {
                         url: "",
 			folder: "",
