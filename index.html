@@ -34,6 +34,7 @@ var changeStatusMessage = false;
 var json_annotations = [];
 var list_of_tags = [];
 var current_visible_area_id = -1;
+var minsize = 80;
 
 /*$("#image_to_process").on('load', function() {
  alert("On Load");
@@ -267,19 +268,19 @@ $(document).ready(function ()
 		// Check region size
 		if (isAreaTooSmall(area))
 		{
-			setStatusAndColor("The region is too small (must be >80px).", RED_COLOR)
+			setStatusAndColor("The region is too small (must be >" + minsize + "px).", RED_COLOR)
 
 			newWidth = area.width;
 			newHeight = area.height;
 
-			if (newWidth < 80)
+			if (newWidth < minsize)
 			{
-				newWidth = 80;
+				newWidth = minsize;
 			}
 
-			if (newHeight < 80)
+			if (newHeight < minsize)
 			{
-				newHeight = 80;
+				newHeight = minsize;
 			}
 
 			$('#image_to_process').selectAreas('resizeArea', current_area.id, newWidth, newHeight);
@@ -492,19 +493,19 @@ function isTagInAuthorizedList()
 		// Check region size
 		if (isAreaTooSmall(area))
 		{
-			setStatusAndColor("The region is too small (must be >80px).", RED_COLOR)
+			setStatusAndColor("The region is too small (must be >" + minsize + "px).", RED_COLOR)
 
 			newWidth = area.width;
 			newHeight = area.height;
 
-			if (newWidth < 80)
+			if (newWidth < minsize)
 			{
-				newWidth = 80;
+				newWidth = minsize;
 			}
 
-			if (newHeight < 80)
+			if (newHeight < minsize)
 			{
-				newHeight = 80;
+				newHeight = minsize;
 			}
 
 			$('#image_to_process').selectAreas('resizeArea', current_area.id, newWidth, newHeight);
@@ -520,7 +521,7 @@ function isTagInAuthorizedList()
 
 	function isAreaTooSmall(area)
 	{
-		if ((area.width<80) || (area.height<80))
+		if ((area.width<minsize) || (area.height<minsize))
 		{
 			return true;
 		}
