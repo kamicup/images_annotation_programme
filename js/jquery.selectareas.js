@@ -760,9 +760,9 @@
             display : nbAreas? "block" : "none"
         });
         if (nbAreas) {
-            this.$image.addClass("blurred");
+            // this.$image.addClass("blurred");
         } else {
-            this.$image.removeClass("blurred");
+            // this.$image.removeClass("blurred");
         }
         this.$trigger.css({
             cursor : this.options.allowSelect ? "crosshair" : "default"
