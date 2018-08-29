@@ -137,7 +137,7 @@ else
 #	$image_info = $list_of_images[$random_index];
 
 $id = $image_info["name"];
-$old_id = $_POST["old_id"];
+$old_id = $_POST["old_id"] ?? null;
 error_log("old_id:".$old_id."\n",3,'test.log');
 if(isset($old_id))
 {       
