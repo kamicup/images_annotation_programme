@@ -257,7 +257,8 @@ $(document).ready(function ()
 		// Do not focus if tag is not empty and at begining or after new zone creation
 		if ( (init_finished) && (region_tag_length==0) )
 		{
-			$("#tag_input").focus();
+			// $("#tag_input").focus();
+			setTagAndRegion("Person"); //むりやり
 		}
 		else
 		{
@@ -546,8 +547,11 @@ function isTagInAuthorizedList()
 	 setStatusAndColor(status_text, "#000");
   }
 
-  function setTagAndRegion()
+  function setTagAndRegion(__tag)
   {
+	if (__tag) {
+		$("#tag_input").val(__tag);
+	}
 
 	changeStatusMessage = true;
 
@@ -567,7 +571,7 @@ function isTagInAuthorizedList()
 		return false;
 	}
 
-	var region_tag = $("#tag_input").val();
+	region_tag = $("#tag_input").val();
 
 	if (region_tag.length < 3)
 	{
@@ -579,7 +583,7 @@ function isTagInAuthorizedList()
 		return false;
 	}
 
-	if (!isTagInAuthorizedList())
+	if (!isTagInAuthorizedList() && !__tag)
 	{
 		setStatusAndColor("This tag is not in the predefined list.", RED_COLOR);
 		return false;
