@@ -634,7 +634,7 @@
                 width: 0,
                 maxAreas: 0,
                 outlineOpacity: 0.5,
-                overlayOpacity: 0.5,
+                overlayOpacity: 0.1,
                 areas: [],
                 onChanging: null,
                 onChanged: null,
