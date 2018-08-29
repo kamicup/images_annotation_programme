@@ -633,7 +633,7 @@
                 maxSize: [0, 0],
                 width: 0,
                 maxAreas: 0,
-                outlineOpacity: 0.5,
+                outlineOpacity: 0.1,
                 overlayOpacity: 0.1,
                 areas: [],
                 onChanging: null,
