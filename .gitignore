@@ -1,4 +1,5 @@
 data/annotations/
+data/images/
 *.log
 #.gitignore
 shell/object_detection/protos/__pycache__/
